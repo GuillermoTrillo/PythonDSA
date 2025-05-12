@@ -1,4 +1,4 @@
-class Text():
+class Text:
     #* Menus
     
     @staticmethod

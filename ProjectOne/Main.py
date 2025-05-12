@@ -1,14 +1,12 @@
-
-import ProjectOne.Text as Text
+import InputManager as InputManager
 
 class Main:
     
-    text = Text.Text()
+    
+    inputManager = InputManager.InputManager()
     
     def main():
-       Main.StartGame()
+       Main.inputManager.StartGame()
 
-    def StartGame():
-        Main.text.startMenu()
         
 Main.main()
