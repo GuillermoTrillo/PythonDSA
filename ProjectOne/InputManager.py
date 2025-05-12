@@ -6,27 +6,39 @@ class InputManager:
     
     def StartGame(self):
         InputManager.text.startMenu()
-        operation = input("Escreva o simbolo: ")
+        operation = input("Your input: ")
         if operation == "1":
-                InputManager.ChooseDifficulty()
+                InputManager.ChooseDifficulty(self)
         elif operation == "0":
             return
         else:
-            InputManager.StartGame()
+            InputManager.StartGame(self)
             
     
     def ChooseDifficulty(self):
         InputManager.text.difficulty()
         
-        operation = input("Escreva o simbolo: ")
+        operation = input("Your input: ")
         if operation == "1":
-                InputManager.ChooseDifficulty()
+                InputManager.EasyMode(self)
         elif operation == "2":
+            InputManager.MediumMode(self)
             return
         elif operation == "3":
+            InputManager.HardMode(self)
             return
         elif operation == "0":
-            InputManager.StartGame()
+            InputManager.StartGame(self)
             return
         else:
-            InputManager.StartGame()
+            InputManager.ChooseDifficulty(self)
+            
+    def EasyMode(self):
+        print("this is easy mode")
+        
+    def MediumMode(self):
+        print("this is Medium mode")
+        
+    def HardMode(self):
+        print("this is Hard mode")
+        
