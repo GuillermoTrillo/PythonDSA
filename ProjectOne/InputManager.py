@@ -1,9 +1,10 @@
+from fileManagers import EasyOrganizer as EasyOrganizer
 import Text as Text
 
 class InputManager:
     
     text = Text.Text()
-    
+
     def StartGame(self):
         InputManager.text.startMenu()
         operation = input("Your input: ")
@@ -13,6 +14,8 @@ class InputManager:
             return
         else:
             InputManager.StartGame(self)
+            
+            
             
     
     def ChooseDifficulty(self):
@@ -35,6 +38,8 @@ class InputManager:
             
     def EasyMode(self):
         print("this is easy mode")
+        easyOrganizer = EasyOrganizer.EasyOrganizer()
+        easyOrganizer.accessFile()
         
     def MediumMode(self):
         print("this is Medium mode")
