@@ -47,6 +47,7 @@ class InputManager:
         print("this is Medium mode")
         mediumOrganizer = MediumOrganizer.MediumOrganizer()
         mediumOrganizer.accessFile()
+        mediumOrganizer.getRandomWord()
         
     def HardMode(self):
         print("this is Hard mode")

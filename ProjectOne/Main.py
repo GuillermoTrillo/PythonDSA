@@ -7,5 +7,5 @@ class Main:
     def main():
        Main.inputManager.StartGame()
 
-        
+
 Main.main()
