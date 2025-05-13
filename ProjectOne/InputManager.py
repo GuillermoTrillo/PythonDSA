@@ -1,4 +1,6 @@
 from fileManagers import EasyOrganizer as EasyOrganizer
+from fileManagers import MediumOrganizer as MediumOrganizer
+from fileManagers import HardOrganizer as HardOrganizer
 import Text as Text
 
 class InputManager:
@@ -43,7 +45,11 @@ class InputManager:
         
     def MediumMode(self):
         print("this is Medium mode")
+        mediumOrganizer = MediumOrganizer.MediumOrganizer()
+        mediumOrganizer.accessFile()
         
     def HardMode(self):
         print("this is Hard mode")
+        hardOrganizer = HardOrganizer.HardOrganizer()
+        hardOrganizer.accessFile()
         
