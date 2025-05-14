@@ -1,12 +1,12 @@
-from fileManagers import EasyOrganizer as EasyOrganizer
-from fileManagers import MediumOrganizer as MediumOrganizer
-from fileManagers import HardOrganizer as HardOrganizer
+from fileManagers import Organizer as Organizer
+import GameDealer as GameDealer
 import Text as Text
 
 class InputManager:
     
     text = Text.Text()
-
+    gameDealer = GameDealer.GameDealer()
+    
     def StartGame(self):
         InputManager.text.startMenu()
         operation = input("Your input: ")
@@ -25,12 +25,12 @@ class InputManager:
         
         operation = input("Your input: ")
         if operation == "1":
-                InputManager.EasyMode(self)
+            InputManager.startMatch(self, "Easy")
         elif operation == "2":
-            InputManager.MediumMode(self)
+            InputManager.startMatch(self, "Medium")
             return
         elif operation == "3":
-            InputManager.HardMode(self)
+            InputManager.startMatch(self, "Hard")
             return
         elif operation == "0":
             InputManager.StartGame(self)
@@ -38,19 +38,9 @@ class InputManager:
         else:
             InputManager.ChooseDifficulty(self)
             
-    def EasyMode(self):
-        print("this is easy mode")
-        easyOrganizer = EasyOrganizer.EasyOrganizer()
-        easyOrganizer.accessFile()
-        
-    def MediumMode(self):
-        print("this is Medium mode")
-        mediumOrganizer = MediumOrganizer.MediumOrganizer()
-        mediumOrganizer.accessFile()
-        mediumOrganizer.getRandomWord()
-        
-    def HardMode(self):
-        print("this is Hard mode")
-        hardOrganizer = HardOrganizer.HardOrganizer()
-        hardOrganizer.accessFile()
-        
+    def startMatch(self, difficulty):
+        organizer = Organizer.Organizer()
+        organizer.accessFile(difficulty)
+        randomWord = organizer.getRandomWord()
+        InputManager.gameDealer.getChances()
+    #def 
